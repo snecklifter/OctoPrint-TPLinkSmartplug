@@ -380,6 +380,7 @@ class tplinksmartplugPlugin(octoprint.plugin.SettingsPlugin,
 
 	def turn_off(self, plugip):
 		self._tplinksmartplug_logger.debug("Turning off %s." % plugip)
+		self._tplinksmartplug_logger.info("Turning off at plug at", datetime.now())
 		plug = self.plug_search(self._settings.get(["arrSmartplugs"]), "ip", plugip)
 		self._tplinksmartplug_logger.debug(plug)
 		if "/" in plugip:
